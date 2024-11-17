@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+.box{
+    display: flex;
+    color: #fff;
+    min-height: 100vh;
+    width: 100%;
+}
+section{
+    position: relative;
+    min-height: 100vh;
+    width: 60%;
+    background-color: #121321;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 10000px;
+}
+section::before{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-image: linear-gradient(90deg,#9c27b0,#f3f5f5);
+    transform: translate(-200px,-100px);
+}
+section::after{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-image: linear-gradient(90deg,#9c27b0,#f3f5f5);
+    transform: translate(200px,100px);
+}
+.contanier{
+    position: relative;
+    height: 270px;
+    width: 400px;
+    z-index: 100;
+    transition: 0.3s;
+    transform-style: preserve-3d;
+}
+.contanier:hover{
+    transform: rotateY(180deg);
+}
+.contanier .card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255,0.1);
+    backdrop-filter: blur(35px);
+    border-radius: 30px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255,0.1);
+    padding: 25px;
+    backface-visibility: hidden;
+}
+.front-face .upperdiv{
+    display: flex;
+    justify-content: space-between;
+}
+.front-face .upperdiv span {
+    display: flex;
+    align-items: center;
+}
+.front-face .upperdiv > span > img{
+    width: 55px;
+    margin-right: 10px;
+}
+.front-face .upperdiv h5{
+    font-size: 20px;
+    font-weight: 400;
+}
+.front-face .upperdiv > img {
+    width: 65px;
+}
+.front-face .card-detail{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 55px;
+}
+.front-face .card-detail h6{
+    font-size: 14px;
+    font-weight: 400;
+}
+.front-face .card-detail h5{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.front-face .card-detail #number{
+    margin-bottom: 25px;
+}
+.back-face {
+    border:none;
+    padding: 15px 25px 25px 25px;
+    transform: rotateY(180deg);
+} 
+.back-face h6{
+    font-size: 8px;
+}
+.back-face .magnetic-strip{
+    position: absolute;
+    left: 0;
+    top: 40px;
+    height: 45px;
+    width: 100%;
+    background: #000;
+}
+.back-face .signature{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 70px;
+    height: 40px;
+    width: 85%;
+    background:repeating-linear-gradient(#fff , #fff 3px , #efefef 0px , #efefef 9px);
+    border-radius: 6px;
+    
+}
+.signature i{
+    color: #000;
+    font-size: 12px;
+    margin-right: -30px;
+    padding: 4px 6px;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: -1;
+}
+.back-face h5 {
+    font-size: 10px;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100vh;
+    background-color: #121321;
+}
+.content::before{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    /* border-radius: 50%; */
+    background-image: linear-gradient(90deg,#9c27b0,#f3f5f5);
+   
+}
+
+.content .text{
+    width: 70%;
+    /* height: 80%; */
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255,0.1);
+    backdrop-filter: blur(35px);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px;
+    border-radius: 40px;
+   
+}
+
+.text .select{
+    display: flex;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: #fff;
+    color: #9c27b0;
+    width: 70%;
+    padding: 10px 15px;
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+.text .select #master-card{
+    color: #fff;
+    background: #9c27b0;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.text > h1{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.text .card-text > div {
+    margin-bottom: 10px;
+}
+.text .card-text .expiration{
+    display: flex;
+    justify-content: space-between;
+}
+.text .card-text h5{
+    font-size: 15px;
+    font-weight: 400;
+}
+.text .card-text input{
+    color: #fff;
+    font-size: 17px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #000;
+    
+}
+.text> button{
+    color: #e1dfdf;
+    background-color: #9c27b0;
+    margin: 20px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding: 10px 20px;
+}
